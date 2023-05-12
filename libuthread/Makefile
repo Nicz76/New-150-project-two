@@ -6,7 +6,7 @@ CC := gcc
 CFLAGS := -Wall -Wextra -Werror
 
 
-all: $(lib)
+all: $(lib) queue.o
 
 ## TODO: Phase 1
 libuthread.a: $(objs)
