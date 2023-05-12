@@ -1,18 +1,18 @@
 # Target library
 lib := libuthread.a
-objs := queue.o
+objs := *.o *.d *.x
 
 CC := gcc
 CFLAGS := -Wall -Wextra -Werror
 
 
-all: $(lib) queue.o
+all: $(lib)
 
 ## TODO: Phase 1
 libuthread.a: $(objs)
-    ar rcs libuthread.a queue.o
+    ar rcs libuthread.a $@ $^ 
 
-queue.o: queue.c queue.h
+%.o: %.c queue.h
     $(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
