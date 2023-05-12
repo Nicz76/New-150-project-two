@@ -9,7 +9,7 @@ CFLAGS := -Wall -Wextra -Werror
 all: $(lib)
 
 ## TODO: Phase 1
-libuthread.a: $(objs)
+libuthread.a: $(objs) queue_tester_example.o
     ar rcs libuthread.a -o $@ $^ # Probably something wrong with this
 
 all: queue_tester_example.o queue.o test
